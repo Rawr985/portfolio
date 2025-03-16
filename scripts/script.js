@@ -56,12 +56,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Initialize EmailJS
+    emailjs.init('YOUR_PUBLIC_KEY');
+
     // Form Submission
     const contactForm = document.getElementById('contact-form');
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        // Add your form submission logic here
-        alert('Thank you for your message! I will get back to you soon.');
-        contactForm.reset();
+        const formData = {
+            from_name: contactForm.querySelector('input[type="text"]').value,
+            from_email: contactForm.querySelector('input[type="email"]').value,
+            message: contactForm.querySelector('textarea').value,
+            to_email: 'rawr985@proton.me'
+        };
+
+        try {
+            await emailjs.send('default_service', 'template_id', formData);
+            alert('Thank you for your message! I will get back to you soon.');
+            contactForm.reset();
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Sorry, there was an error sending your message. Please try again later.');
+        }
     });
 });
