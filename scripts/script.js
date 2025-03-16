@@ -57,12 +57,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Initialize EmailJS
-    emailjs.init('YOUR_PUBLIC_KEY');
+    emailjs.init('Wd_Hy0Hs0Hs0Hs0H');
 
     // Form Submission
     const contactForm = document.getElementById('contact-form');
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+        
+        // Show loading state
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+
         const formData = {
             from_name: contactForm.querySelector('input[type="text"]').value,
             from_email: contactForm.querySelector('input[type="email"]').value,
@@ -71,12 +78,16 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         try {
-            await emailjs.send('default_service', 'template_id', formData);
+            await emailjs.send('service_portfolio', 'template_contact', formData);
             alert('Thank you for your message! I will get back to you soon.');
             contactForm.reset();
         } catch (error) {
             console.error('Error:', error);
             alert('Sorry, there was an error sending your message. Please try again later.');
+        } finally {
+            // Reset button state
+            submitButton.disabled = false;
+            submitButton.textContent = originalText;
         }
     });
 });
