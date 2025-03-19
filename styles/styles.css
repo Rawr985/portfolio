@@ -71,8 +71,6 @@ body {
 
 .hero-image {
     animation: float 6s ease-in-out infinite;
-    border-radius: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 @keyframes float {
@@ -143,7 +141,6 @@ body {
 /* About Section */
 .about-image {
     transition: transform var(--transition-speed);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .about-image:hover {
