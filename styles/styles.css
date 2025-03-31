@@ -215,20 +215,12 @@ body {
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    padding: 1.5rem;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-.project-card .card-img-top {
-    border-radius: 20px 20px 0 0;
-    transition: transform var(--transition-speed);
-}
-
-.project-card:hover .card-img-top {
-    transform: scale(1.05);
 }
 
 /* Footer */
