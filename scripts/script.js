@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Initialize EmailJS with your public key
-    emailjs.init('Wd_Hy0Hs0Hs0Hs0H', { publicKey: 'Wd_Hy0Hs0Hs0Hs0H' });
+    emailjs.init('Wd_Hy0Hs0Hs0Hs0H');
 
     // Form Submission
     const contactForm = document.getElementById('contact-form');
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         try {
-            await emailjs.send('service_portfolio', 'template_contact', formData, 'Wd_Hy0Hs0Hs0Hs0H');
+            await emailjs.send('service_portfolio', 'template_contact', formData);
             alert('Thank you for your message! I will get back to you soon.');
             contactForm.reset();
         } catch (error) {

@@ -79,25 +79,7 @@ body {
     100% { transform: translateY(0px); }
 }
 
-/* Progress Bars */
-.progress {
-    height: 10px;
-    border-radius: 5px;
-    background-color: rgba(0, 123, 255, 0.1);
-    margin-bottom: 1.5rem;
-    overflow: hidden;
-}
-
-.progress-bar {
-    background: linear-gradient(45deg, #007bff, #00bfff);
-    transition: width 1s ease-in-out;
-    border-radius: 5px;
-    position: relative;
-}
-
-.skill-item {
-    margin-bottom: 2rem;
-}
+/* Progress Bars & Skill Items - Consolidated below */
 
 .skill-item i {
     font-size: 1.2rem;
@@ -179,16 +161,17 @@ body {
 .skill-item .fab.fa-python { color: #3776AB; }
 
 .progress {
-    height: 8px;
+    height: 10px;
     margin-top: 10px;
     background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
+    border-radius: 5px;
     overflow: hidden;
 }
 
 .progress-bar {
-    background: linear-gradient(90deg, #4a90e2, #67b26f);
-    transition: width 0.6s ease;
+    background: linear-gradient(45deg, #007bff, #00bfff);
+    transition: width 1s ease-in-out;
+    border-radius: 5px;
 }
 
 .skill-item i {
@@ -271,3 +254,28 @@ body {
 .project-card:nth-child(1) { animation-delay: 0.2s; }
 .project-card:nth-child(2) { animation-delay: 0.4s; }
 .project-card:nth-child(3) { animation-delay: 0.6s; }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero-section {
+        padding-top: 7rem;
+        text-align: center;
+    }
+    
+    .hero-image {
+        margin-top: 2rem;
+        max-width: 80%;
+    }
+    
+    .section-padding {
+        padding: 4rem 0;
+    }
+    
+    .section-title {
+        margin-bottom: 3rem;
+    }
+    
+    .display-1 {
+        font-size: 3rem;
+    }
+}
